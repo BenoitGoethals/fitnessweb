@@ -10,9 +10,11 @@ import { HomeComponent } from './home/home.component';
 import { FlashMessagesModule } from 'angular2-flash-messages';
 import { FormsModule } from '@angular/forms';
 import { SheduleComponent } from './shedule/shedule.component';
-import {SelectModule} from 'ng2-select';
-import { BsDropdownModule } from 'ngx-bootstrap';
 
+import { BsDropdownModule } from 'ngx-bootstrap';
+import { CountryService } from './country.service';
+import { HttpModule }      from '@angular/http';
+import {NgSelectModule} from '@ng-select/ng-select';
 const appRoutes: Routes = [
   { path: 'newclient', component: NewclientComponent },
   { path: 'navbar', component: NavbarComponent },
@@ -38,11 +40,13 @@ const appRoutes: Routes = [
     BrowserModule,
     FlashMessagesModule,
     FormsModule,
-    SelectModule,
+
+    HttpModule,
+    NgSelectModule,
     NgbModule.forRoot(),
     BsDropdownModule.forRoot()
   ],
-  providers: [],
+  providers: [CountryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

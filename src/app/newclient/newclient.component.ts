@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import {Client} from '../client';
 import { FlashMessagesService } from 'angular2-flash-messages';
+import {CountryService} from "../country.service";
 
 @Component({
   selector: 'app-newclient',
@@ -15,7 +16,6 @@ export class NewclientComponent {
     lastName: '',
     email: '',
     phone: '',
-     country: '',
      language: ''
    };
 
@@ -41,14 +41,20 @@ export class NewclientComponent {
   private disabled = false;
 
 
+  public countries: any[];
 
 
   constructor(
     private router: Router,
-    private flashMessagesService: FlashMessagesService
+    private flashMessagesService: FlashMessagesService,
+    private countryService: CountryService
 
   ) {
    // this.flashMessagesService = flashMessages;
+    // .subscribe(resHerbsData => this.herbs = resHerbsData);
+    this.countryService.getCountrys().subscribe(res =>this.countries = res);
+    console.log(this.countries);
+
   }
 
   onSubmit({value, valid}: {value: Client, valid: boolean}) {
@@ -91,4 +97,8 @@ export class NewclientComponent {
     this.value = value;
   }
 
+  onchangeCountry(event) {
+    this.client.country = event.value;
+    console.log("-->"+event);
+  }
 }

@@ -118,19 +118,38 @@
             [value]="lang">
       {{lang}}
     </option>
+
   </select>
+
 </div>
 
   <div class="form-group">
+    <label for="client.country">Country</label>
+
+    <ng-select [items]="countries" name="country"
+               bindLabel="name"
+               bindValue="name"
+               placeholder="Select city"
+               [(ngModel)]="client.country">
+    </ng-select>
+    <p>
+      Selected city ID: {{client.country}}
+    </p>
+  </div>
+
+<!--
+  <div class="form-group">
   <label for="country">Country</label>
-  <select class="form-control"  id="country"
+  <select class="form-control"  id="country" [(ngModel)] = "client.country" (ngModelChange)="onchangeCountry($event)"
           required
-          [(ngModel)]="client.country" name="country">
-    <option value="">Please select a Country</option>
-    <option *ngFor="let item of items" [value]="item">{{item}}</option>
+          name="country">
+    <option *ngFor="let country of countries" [ngValue]="country">{{country.name}}</option>
   </select>
 </div>
-  {{client.country}}
+{{client.country}}
+ -->
+
+  <br/>
 <br/>
   <input type="submit" value="Submit" class="btn btn-primary btn-block">
 </form>
