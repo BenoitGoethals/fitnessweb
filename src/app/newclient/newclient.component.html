@@ -1,4 +1,4 @@
-
+{{diagnostic}}
 <div class="row">
   <div class="col-md-6">
     <a routerLink="/" href="#" class="btn btn-link">
@@ -110,14 +110,29 @@
            class="form-control">
   </div>
 
-  <select class="form-control">
+  <div class="form-group">
+  <label for="language">Language</label>
+  <select class="form-control" id="language" [(ngModel)]="client.language" name="language">
     <option value="">Please select a language</option>
     <option *ngFor="let lang of langs"
             [value]="lang">
       {{lang}}
     </option>
   </select>
+</div>
+
+  <div class="form-group">
+  <label for="country">Country</label>
+  <select class="form-control"  id="country"
+          required
+          [(ngModel)]="client.country" name="country">
+    <option value="">Please select a Country</option>
+    <option *ngFor="let item of items" [value]="item">{{item}}</option>
+  </select>
+</div>
+  {{client.country}}
 <br/>
   <input type="submit" value="Submit" class="btn btn-primary btn-block">
 </form>
 </div>
+

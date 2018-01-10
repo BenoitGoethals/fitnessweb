@@ -6,5 +6,6 @@ export interface Client {
   phone?: string;
   username?: string;
   password?: string;
-
+  country?: string;
+  language?: string;
 }

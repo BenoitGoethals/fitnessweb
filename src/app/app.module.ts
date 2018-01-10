@@ -10,7 +10,8 @@ import { HomeComponent } from './home/home.component';
 import { FlashMessagesModule } from 'angular2-flash-messages';
 import { FormsModule } from '@angular/forms';
 import { SheduleComponent } from './shedule/shedule.component';
-
+import {SelectModule} from 'ng2-select';
+import { BsDropdownModule } from 'ngx-bootstrap';
 
 const appRoutes: Routes = [
   { path: 'newclient', component: NewclientComponent },
@@ -37,8 +38,9 @@ const appRoutes: Routes = [
     BrowserModule,
     FlashMessagesModule,
     FormsModule,
-
-    NgbModule.forRoot()
+    SelectModule,
+    NgbModule.forRoot(),
+    BsDropdownModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
