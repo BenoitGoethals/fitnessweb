@@ -15,6 +15,7 @@ import { BsDropdownModule } from 'ngx-bootstrap';
 import { CountryService } from './country.service';
 import { HttpModule }      from '@angular/http';
 import {NgSelectModule} from '@ng-select/ng-select';
+import {AuthService} from './auth.service';
 const appRoutes: Routes = [
   { path: 'newclient', component: NewclientComponent },
   { path: 'navbar', component: NavbarComponent },
@@ -46,7 +47,7 @@ const appRoutes: Routes = [
     NgbModule.forRoot(),
     BsDropdownModule.forRoot()
   ],
-  providers: [CountryService],
+  providers: [CountryService,AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -24,9 +24,9 @@
         </div>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="text" placeholder="Login" aria-label="Username">
-      <input class="form-control mr-sm-2" type="password" placeholder="Password" aria-label="Password">
+    <form class="form-inline my-2 my-lg-0" (submit)="onSubmit()">
+      <input class="form-control mr-sm-2" type="text" [(ngModel)]="userName" placeholder="Login" aria-label="Username">
+      <input class="form-control mr-sm-2" type="password"[(ngModel)]="password" placeholder="Password" aria-label="Password">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Login</button>
       <button disabled="true" class="btn btn-outline-success my-2 my-sm-0 m-2" type="submit">Logout</button>
     </form>
