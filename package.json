@@ -23,7 +23,7 @@
     "@angular/router": "^5.0.0",
     "@ng-bootstrap/ng-bootstrap": "^1.0.0-beta.9",
     "@ng-select/ng-select": "^0.14.3",
-    "angular-weekly-scheduler": "0.0.5",
+    "angular-weekly-scheduler": "0.0.6",
     "angular2-flash-messages": "^2.0.5",
     "bootstrap": "^4.0.0-beta.2",
     "core-js": "^2.4.1",
